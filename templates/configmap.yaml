@@ -12,6 +12,9 @@ data:
   {{- end }}
   TRUST_PROXY: "true"
   {{- end }}
+  {{- if not .Values.config.port }}
+  PORT: "{{ .Values.service.containerPort }}"
+  {{- end }}
   {{- range $key := keys .Values.config }}
   {{ $key | snakecase | upper }}: {{ get $.Values.config $key }}
   {{- end }}

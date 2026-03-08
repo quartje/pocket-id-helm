@@ -70,6 +70,8 @@ securityContext:
 service:
   type: ClusterIP
   port: 80
+  # -- The port the container listens on
+  containerPort: 1411
 
 ingress:
   # -- Enables an ingress for the application
